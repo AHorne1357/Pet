@@ -18,7 +18,7 @@ public class Pet {
     {
         return this.name;
     }
-    //public toString method that that prints out all of the object state
+    //public toString method
     public String toString()
     {
         String output = "";
@@ -29,12 +29,13 @@ public class Pet {
     //main
     public static void main(String[] args)
     {
-        // First Pet object using default constructor
+        // First Pet object
         Pet myPet1 = new Pet();
         myPet1.setName("Fuli");
         System.out.println("Pet information:");
         System.out.println(myPet1);
 
+        //Second Pet object
         Pet myPet2 = new Pet();
         myPet2.setName("Tonka");
         System.out.println("\nPet information");
