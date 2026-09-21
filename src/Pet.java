@@ -3,42 +3,68 @@
 public class Pet {
     //private data fields
     private String name;
-    //public constructors
+    private String type;
+    private int age;
+
+    //constructors
     public Pet()
     {
         this.setName("Pet Name");
+        this.setType("Animal");
+        this.setAge(1);
     }
-    //public set or mutator method for every private data field
+
+    //custom constructor
+    public Pet(String newName, String newType, int newAge){
+        this.setName(newName);
+        this.setType(newType);
+        this.setAge(newAge);
+    }
+
+    //Setters
     public void setName(String newName)
     {
         this.name = newName;
     }
-    //public get or accessor method for every private data field
+    public void setType(String newType){
+        this.type = newType;
+    }
+    public void setAge(int newAge){
+        this.age = newAge;
+    }
+
+    //Getters
     public String getName()
     {
         return this.name;
     }
+    public String getType(){
+        return this.type;
+    }
+    public int getAge(){
+        return this.age;
+    }
+
+    //Speak method
+    public String speak(){
+        if (this.type.equalsIgnoreCase("dog")){
+            return "Woof";
+        } else if (this.type.equalsIgnoreCase("cat")){
+            return "Meow";
+        } else{
+            return "Noise";
+        }
+    }
+
     //public toString method
     public String toString()
     {
         String output = "";
-        output += "Pet name: ";
-        output += this.getName();
+        output += "Pet information:\n";
+        output += "Type: " + this.getType() + "\n";
+        output += "Name: " + this.getName() + "\n";
+        output += "Sound: " + this.speak() + "\n";
+        output += "Age: " + this.getAge() + "\n";
         return output;
-    }
-    //main
-    public static void main(String[] args)
-    {
-        // First Pet object
-        Pet myPet1 = new Pet();
-        myPet1.setName("Fuli");
-        System.out.println("Pet information:");
-        System.out.println(myPet1);
-
-        //Second Pet object
-        Pet myPet2 = new Pet();
-        myPet2.setName("Tonka");
-        System.out.println("\nPet information");
-        System.out.println(myPet2);
     }
 }
